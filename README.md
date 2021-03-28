@@ -8,3 +8,7 @@ In order to use it, input some sample questions (or a previous test). Then, usin
 pip install -r requirements.txt
 
 python question_genner.py
+
+npm install express https 
+
+node index.js
