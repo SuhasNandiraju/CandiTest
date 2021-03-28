@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Output</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles1.css" />
+</head>
+
+<body>
+    <h1>Test Outputs</h1>
+    {{#each tests}}
+    <h2>Test #{{this.number}}</h2>
+    <div>
+        <ol>
+            {{#each this.questions}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ol>
+    </div>
+    {{/each}}
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Input</title>
+  <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+</head>
+
+<body>
+  <form method="post" action="/generate" id="login-form" class="login-form" autocomplete="off" role="main">
+    <h3>Test Question Generator</h3>
+    <div>
+      <label class="label-email">
+        <input id="numTests" type="number" class="text" name="numTests" placeholder="0" tabindex="1" required />
+        <span class="required">Number of Tests to Generate</span>
+      </label>
+    </div>
+    <div>
+      <label class="label-password">
+        <span class="required">List of Questions (format: ['q1', 'q2', ...])</span>
+        <br>
+      </label>
+      <textarea id="questionsText" name="questionsText"></textarea>
+    </div>
+    <input id="submit" type="submit" value="Submit" />
+  </form>
+</body>
+
+</html>
