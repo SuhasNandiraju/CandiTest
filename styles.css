@@ -143,3 +143,7 @@ textarea {
   max-width: 22em;
   min-height: 15em;
 }
+#submit {
+  background-color: #ef3b3a;
+  color: white;
+}

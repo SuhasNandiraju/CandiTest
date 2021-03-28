@@ -7,10 +7,10 @@
 </head>
 
 <body>
-    <div class="form" method="post" action="/generate">
+    <div class="form">
         <h1>Test Generator</h1>
         <div class="thumbnail"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/hat.svg" /></div>
-        <form class="login-form">
+        <form class="login-form" method="post" action="/generate">
             <label>
                 <span class="required">Number of Tests to Generate</span>
                 <input id="numTests" type="number" class="text" name="numTests" placeholder="0" tabindex="1" required />
@@ -21,7 +21,7 @@
                 <span class="required">Format: Leave a blank line between questions</span> <br>
             </label>
             <textarea id="questionsText" name="questionsText"></textarea>
-            <button>login</button>
+            <input id="submit" type="submit" value="Submit" />
         </form>
     </div>
 </body>
