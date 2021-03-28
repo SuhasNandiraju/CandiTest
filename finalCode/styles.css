@@ -26,9 +26,11 @@
 }
 .form .thumbnail img {
   display: block;
-  min-width: 130px;
-  min-height: 100px;
-  transform: translateX(-18.5px) translateY(-23px);
+  min-width: 150%;
+  max-width: 150%;
+  min-height: 200%;
+  max-height: 200%;
+  transform: translateX(-15%) translateY(-24%);
 }
 .form input {
   outline: 0;
