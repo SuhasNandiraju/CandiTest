@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Output</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles1.css" />
+</head>
+
+<body>
+    <h1>Test Outputs</h1>
+    <div>
+        {{#each tests}}
+        <table class="center">
+            <tr>
+                <th colspan="2">Test #{{this.number}}</th>
+            </tr>
+            <tr>
+                <th>Number</th>
+                <th>Question</th>
+            </tr>
+            {{#each this.questions}}
+            <tr>
+                <td>{{this.number}}</td>
+                <td>{{this.question}}</td>
+            </tr>
+            {{/each}}
+        </table>
+        <br><br>
+        {{/each}}
+    </div>
+</body>
+
+</html>

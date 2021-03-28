@@ -30,19 +30,29 @@ app.post('/generate', make_api_request, function(req, res) {
     var data = [];
     for(i = 0; i < obj.length; i++) {
         data[i] = {'number': i + 1, 'questions': obj[i]};
-    }
+        for(j = 0; j < obj[i].length; j++) {
+            obj[i][j] = {'number': j+1, 'question': obj[i][j]};
+        }
+    };
     res.render('output', {'tests': data});
     console.log('This is the main page.');
 });
 
 function make_api_request(req, res, next) {
-    var url = 'http://127.0.0.1:5000/get_test';
-    console.log('url: ' + url);
+    var url = 'http://127.0.0.1:5000/tests/get_test';
+
+    var arr = req.body.questionsText.split('\n');
+    var newArr = [];
+    for(i = 0; i < arr.length; i += 2) {
+        newArr[newArr.length] = arr[i].replace('\r', '');
+    }
+    console.log(arr);
+    console.log(newArr);
     var options =  { headers : {
             'User-Agent': 'request'
         },
         'tests': req.body.numTests,
-        'questions': req.body.questionsText
+        'questions': newArr
     }
 
     https.get(url, options, function(response) {
@@ -54,7 +64,6 @@ function make_api_request(req, res, next) {
         response.on('end', function() {
             obj = JSON.parse(rawData);
             res.locals.obj = obj;
-            console.log(obj);
             next();
         });
 
@@ -64,7 +73,7 @@ function make_api_request(req, res, next) {
 }
 
 // -------------- listener -------------- //
-// // The listener is what keeps node 'alive.' 
+// // The listener is what keeps node 'alive.'
 
 var listener = app.listen(process.env.PORT || 80, process.env.HOST || "0.0.0.0", function() {
     console.log("Express server started");
